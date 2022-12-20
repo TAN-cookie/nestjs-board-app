@@ -33,4 +33,9 @@ export class BoardsService {
         this.boards = this.boards.filter((board) => board.id !== id); // id가 같지 않은 것들만 남기고 삭제
     }
 
+    updateBoardStatus(id: string, status: BoardStatus): Board {
+        const board = this.getBoardById(id);
+        board.status = status;
+        return board;
+    }
 }
